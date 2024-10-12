@@ -1,0 +1,8 @@
+.inputStyle {
+    display: block;
+    height: 50px;
+    width: 331px;
+    background-color: var(--main-color);
+    font-family: binkoEng;
+    border-radius: 16px;
+}
