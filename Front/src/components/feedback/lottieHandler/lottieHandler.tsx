@@ -1,8 +1,11 @@
 import Lottie from "lottie-react";
 import girl from '@assets/lottieFiles/girlWithBook.json'
+import flyingBook from '@assets/lottieFiles/FlyingBook.json'
+import React from "react";
 
 const lottieFilesMap = {
-    girl
+    girl,
+    flyingBook
 };
 
 type LottieHandlerProps = {
@@ -10,9 +13,10 @@ type LottieHandlerProps = {
     message?: string;
     className?: string;
     loop?: boolean;
+    style?: React.CSSProperties
 };
 
-const LottieHandler = ({ type, message, className, loop }: LottieHandlerProps) => {
+const LottieHandler = ({ type, message, className, loop, style }: LottieHandlerProps) => {
     const lottie = lottieFilesMap[type];
     // const messageStyle =
     //     type === "error"
@@ -21,7 +25,7 @@ const LottieHandler = ({ type, message, className, loop }: LottieHandlerProps) =
 
     return (
         <div className={`d-flex flex-column align-items-center ${className}`}>
-            <Lottie animationData={lottie} style={{ width: "400px" }} loop={loop} />
+            <Lottie animationData={lottie} style={style} loop={loop} />
             {message && <h3
             // style={messageStyle}
             >{message}</h3>}

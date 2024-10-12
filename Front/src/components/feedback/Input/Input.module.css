@@ -5,4 +5,21 @@
     background-color: var(--main-color);
     font-family: binkoEng;
     border-radius: 16px;
+    font-weight: bold;
+}
+
+.inputStyle.english {
+    padding-left: 10px;
+    font-family: BinkoEng;
+
+}
+
+.inputStyle.arabic {
+    padding-right: 10px;
+
+}
+
+input[type='submit'].inputStyle.english {
+    font-family: binko2Eng;
+    font-size: 20px;
 }

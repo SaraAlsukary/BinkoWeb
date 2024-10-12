@@ -73,13 +73,11 @@ const Header = () => {
                     <Input type='search' style={language === 'Arabic' ? {
                         height: '35px',
                         width: '280px',
-                        paddingRight: '20px'
 
                     } : {
                         fontFamily: 'Binko2Eng',
                         height: '35px',
                         width: '280px',
-                        paddingLeft: '20px',
                         marginLeft: '44px'
 
                     }}

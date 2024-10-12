@@ -15,7 +15,7 @@ const Landing = () => {
                     <Button className={language === 'Arabic' ? `${arabic} ${mobile}` : `${english} ${mobile}`} >{language === 'Arabic' ? 'تصفح' : "let's go"}</Button>
                 </div>
                 <div className={right}>
-                    <LottieHandler loop={false} type={'girl'} />
+                    <LottieHandler loop={false} type={'girl'} style={{ width: '400px' }} />
                 </div>
             </Container >
         </div >
