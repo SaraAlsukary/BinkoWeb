@@ -41,6 +41,25 @@ const Header = () => {
 
 
     }
+
+    // const cLickNavHandler = () => {
+    //     const navLi = document.querySelectorAll(`${navStyle} ul li a`);
+    //     navLi.forEach(li => {
+    //         li.addEventListener('click', (e) => {
+    //             navLi.forEach(nav => {
+    //                 nav.classList.remove('actives');
+
+    //             })
+    //             navLi.forEach<void>((nv) => {
+    //                 nv.classList.remove('actives');
+
+    //             })
+    //                 (e.target as Element).classList.add('actives');
+
+    //         })
+    //     })
+
+    // }
     const changeToArabic = () => {
         dispatch(changeLanguageToArabic());
         document.body.style.direction = 'rtl';
@@ -57,11 +76,15 @@ const Header = () => {
     const changeLanguage = () => {
         if (language === 'English') {
             document.body.style.direction = 'ltr';
+            document.body.style.fontFamily = 'BinkoEng';
         } else {
             document.body.style.direction = 'rtl';
+            document.body.style.fontFamily = 'BinkoAra';
+
 
         }
     }
+    // cLickNavHandler();
     changeLanguage();
     changeThemeColor();
     return (
@@ -75,7 +98,6 @@ const Header = () => {
                         width: '280px',
 
                     } : {
-                        fontFamily: 'Binko2Eng',
                         height: '35px',
                         width: '280px',
                         marginLeft: '44px'
@@ -95,18 +117,18 @@ const Header = () => {
                         {theme === 'Light' ? <li onClick={changeToDark}>
                             <Moon style={{ width: '30px', height: '30px', cursor: 'pointer' }} /></li> :
                             <li className={theme === 'Dark' ? `${dark}` : ''} onClick={changeToLight}><Sun style={{ width: '30px', cursor: 'pointer', height: '30px' }} /></li>}
-                        <li className={theme === 'Dark' ? `${dark}` : ''} ><NavLink to='/' style={theme === 'Dark' ? { color: 'white' } : { color: 'black' }} >{language === 'English' ? 'Home' : 'الرئيسية'}</NavLink></li>
-                        <li className={theme === 'Dark' ? `${dark}` : ''}><NavLink to='news' style={theme === 'Dark' ? { color: 'white' } : { color: 'black' }} >{language === 'English' ? 'News' : 'الأخبار'}</NavLink></li>
-                        <li className={theme === 'Dark' ? `${dark}` : ''}><NavLink to='categories' style={theme === 'Dark' ? { color: 'white' } : { color: 'black' }}>{language === 'English' ? 'Categories' : 'التصنيفات'}</NavLink></li>
-                        <li className={theme === 'Dark' ? `${dark}` : ''} ><NavLink to='about' style={theme === 'Dark' ? { color: 'white' } : { color: 'black' }}>{language === 'English' ? 'About' : 'عنا'}</NavLink></li>
+                        <li className={theme === 'Dark' ? `${dark}` : ''} ><NavLink to='/' className={theme === 'Dark' ? `dark` : `light`} >{language === 'English' ? 'Home' : 'الرئيسية'}</NavLink></li>
+                        <li className={theme === 'Dark' ? `${dark}` : ''}><NavLink to='news' className={theme === 'Dark' ? `dark` : `light`}  >{language === 'English' ? 'News' : 'الأخبار'}</NavLink></li>
+                        <li className={theme === 'Dark' ? `${dark}` : ''}><NavLink to='categories' className={theme === 'Dark' ? `dark` : `light`} >{language === 'English' ? 'Categories' : 'التصنيفات'}</NavLink></li>
+                        <li className={theme === 'Dark' ? `${dark}` : ''} ><NavLink to='about' className={theme === 'Dark' ? `dark` : `light`} >{language === 'English' ? 'About' : 'عنا'}</NavLink></li>
 
                         <li className={theme === 'Dark' ? `${dark}` : ''}>
-                            <select name="language" value={language === "Arabic" ? "العربية" : "English"} style={theme === 'Dark' ? { color: 'white' } : { color: 'black' }}>
+                            <select onFocus={this.size=3} name="language" value={language === "Arabic" ? "العربية" : "English"} style={theme === 'Dark' ? { color: 'white' } : { color: 'black' }}>
                                 <option value="Arabic" onClick={changeToArabic}>{language === 'English' ? 'Arabic' : 'العربية'}</option>
                                 <option value="English" onClick={changeToEnglish}>{language === 'English' ? 'English' : 'الانجليزية'} </option>
                             </select>
                         </li>
-                        <li   ><Button style={language === 'Arabic' ? { fontFamily: 'monospace' } : { fontFamily: 'Binko2Eng' }}><NavLink to='Login' style={{ color: 'black' }}>{language === 'Arabic' ? 'تسجبل الدخول' : "login"}</NavLink></Button></li>
+                        <li   ><Button ><NavLink to='Login' style={{ color: 'black' }}>{language === 'Arabic' ? 'تسجبل الدخول' : "login"}</NavLink></Button></li>
                     </ul>
                     {theme === 'Light' ?
                         <div className={language === 'Arabic' ? ` ${arabicBurger} ${burger}` : ` ${burger} ${englishBurger}`}

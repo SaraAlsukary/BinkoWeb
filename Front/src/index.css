@@ -25,6 +25,11 @@ body {
   src: url('./assets/fonts/Leckerli_One/LeckerliOne-Regular.ttf');
 }
 
+@font-face {
+  font-family: BinkoAra;
+  src: url('./assets/fonts/Markazi_Text/static/MarkaziText-SemiBold.ttf');
+}
+
 a {
   text-decoration: none;
 }
@@ -37,4 +42,16 @@ input,
 button {
   border: none;
   outline: none;
+}
+
+a.dark {
+  color: white;
+}
+
+a.light {
+  color: black;
+}
+
+a.active {
+  color: var(--main-color);
 }

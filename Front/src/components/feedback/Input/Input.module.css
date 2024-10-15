@@ -3,23 +3,27 @@
     height: 50px;
     width: 331px;
     background-color: var(--main-color);
-    font-family: binkoEng;
     border-radius: 16px;
     font-weight: bold;
 }
 
 .inputStyle.english {
-    padding-left: 10px;
     font-family: BinkoEng;
-
+    padding-left: 10px;
 }
 
 .inputStyle.arabic {
+    font-family: BinkoAra;
     padding-right: 10px;
 
 }
 
 input[type='submit'].inputStyle.english {
-    font-family: binko2Eng;
+    font-family: Binko2Eng;
+    font-size: 20px;
+}
+
+input[type='submit'].inputStyle.arabic {
+    font-family: BinkoAra;
     font-size: 20px;
 }

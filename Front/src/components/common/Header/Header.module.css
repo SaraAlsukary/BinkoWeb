@@ -1,5 +1,4 @@
 .headerContainer {
-    font-family: binkoEng;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -42,13 +41,11 @@
     cursor: pointer;
 }
 
-.navStyle select option {
+/* .navStyle select option {
     color: var(--main-color);
-}
+} */
 
-.active {
-    color: var(--main-color);
-}
+
 
 .burger {
     display: none;
@@ -190,4 +187,8 @@
         height: 100px;
         width: 100%;
     }
+}
+
+select option:hover {
+    background-color: var(--main-color);
 }
