@@ -11,7 +11,9 @@ const Landing = () => {
         <div>
             <Container className={landing}>
                 <div className={left}>
-                    <p className={language === 'Arabic' ? `${para} ${mobile}` : `${mobile}`} >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam, quasi porro amet minima inventore aliquam sit itaque soluta quaerat quidem in vero possimus officiis, ullam sed totam id iusto velit.</p>
+                    <p className={language === 'Arabic' ? `${para} ${arabic} ${mobile}` : `${mobile} ${english}`} >
+                        {language === 'English' ? 'Binko is a storytelling community, Where you can discover original stories and books, Also it is a very beautiful place where you can activate with other authors by your opinoin, What are you waiting, Go make your dream book!'
+                            : " بينكو هو مجتمع لسرد القصص، حيث يمكنك اكتشاف القصص والكتب الأصلية، كما أنه مكان جميل جدًا حيث يمكنك التفاعل مع مؤلفين آخرين من خلال رأيك، ماذا تنتظر، اذهب واصنع كتاب أحلامك!"}</p>
                     <Button className={language === 'Arabic' ? `${arabic} ${mobile}` : `${english} ${mobile}`} >{language === 'Arabic' ? 'تصفح' : "let's go"}</Button>
                 </div>
                 <div className={right}>

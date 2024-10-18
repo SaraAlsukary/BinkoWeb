@@ -13,6 +13,7 @@
 body {
   font-family: BinkoEng;
   background-color: var(--main-bg-light-color);
+  transition: .5s;
 }
 
 @font-face {

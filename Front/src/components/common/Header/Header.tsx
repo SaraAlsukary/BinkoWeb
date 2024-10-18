@@ -8,20 +8,17 @@ import { changeThemeToDark, changeThemeToLight } from '@store/themeSlice/themeSl
 import Sun from '@assets/svgs/sun.svg?react'
 import { NavLink } from 'react-router-dom';
 import { Input, Button } from '@components/feedback';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '@hooks/app';
 import { changeLanguageToArabic, changeLanguageToEnglish } from '@store/languageSlice/languageSlice';
 import { Container } from 'react-bootstrap';
-const { headerContainer, navStyle, search, burger, show, dark, arabicNav, englishNav, icon, arabic, english, arabicBurger, englishBurger } = Styles;
+const { headerContainer, searchIcon, navStyle, search, burger, show, dark, arabicNav, englishNav, icon, arabic, english, arabicBurger, englishBurger } = Styles;
 const Header = () => {
     const [toggle, setToggle] = useState(false);
     const dispatch = useAppDispatch();
     const { theme } = useAppSelector(state => state.theme);
     const { language } = useAppSelector(state => state.language);
-    const ref = useRef();
-    const focusHandler = () => {
-        console.log(ref.current)
-    }
+
     const showToggleHandler = () => {
         setToggle(!toggle);
     }
@@ -42,24 +39,6 @@ const Header = () => {
 
     }
 
-    // const cLickNavHandler = () => {
-    //     const navLi = document.querySelectorAll(`${navStyle} ul li a`);
-    //     navLi.forEach(li => {
-    //         li.addEventListener('click', (e) => {
-    //             navLi.forEach(nav => {
-    //                 nav.classList.remove('actives');
-
-    //             })
-    //             navLi.forEach<void>((nv) => {
-    //                 nv.classList.remove('actives');
-
-    //             })
-    //                 (e.target as Element).classList.add('actives');
-
-    //         })
-    //     })
-
-    // }
     const changeToArabic = () => {
         dispatch(changeLanguageToArabic());
         document.body.style.direction = 'rtl';
@@ -84,33 +63,31 @@ const Header = () => {
 
         }
     }
-    // cLickNavHandler();
     changeLanguage();
     changeThemeColor();
     return (
         <header >
             <Container className={theme === 'Light' ? `${headerContainer}` : `${headerContainer} ${dark}`} >
-                <div className={icon}><NavLink to='/'> <LogoIcon language={language} /></NavLink></div>
+                <div className={language === 'Arabic' ? `${arabic} ${icon}` : `${english} ${icon}`}><NavLink to='/'> <LogoIcon language={language} /></NavLink></div>
 
-                <div className={search}>
+                <div className={language === 'Arabic' ? `${arabic} ${search}` : `${english} ${search}`} >
                     <Input type='search' style={language === 'Arabic' ? {
-                        height: '35px',
-                        width: '280px',
 
                     } : {
-                        height: '35px',
-                        width: '280px',
-                        marginLeft: '44px'
+
 
                     }}
 
-                        onFocus={
-                            focusHandler
-                        }
 
                         placeholder={language === 'Arabic' ? 'ابحث' : 'search here..'} />
-                    <Search style={language === 'Arabic' ? { width: '30px', height: '20px', position: 'relative', left: '40px' } : { width: '30px', height: '20px', position: 'relative', left: '-40px' }} ref={ref} />
-                </div>
+                    <div className={language === 'Arabic' ? `${arabic} ${searchIcon}` : `${english} ${searchIcon}`}>
+                        <Search style={language === 'Arabic' ? { width: '100%', height: '100%', position: 'absolute', right: '0' } : {
+                            width: '100%',
+                            height: '100%',
+                            position: 'absolute',
+                            left: "0"
+                        }} />
+                    </div>                </div>
 
                 <nav className={language === 'Arabic' ? `${navStyle} ${arabic} ` : `${navStyle} ${english} `} >
                     <ul className={toggle && language === 'Arabic' && theme === 'Dark' ? `${show} ${dark} ${arabicNav} ` : toggle && language === 'Arabic' && theme === 'Light' ? `${show} ${arabicNav} ` : toggle && language === 'English' && theme === 'Dark' ? ` ${show} ${dark} ${englishNav} ` : toggle && language === 'English' && theme === 'Light' ? ` ${show} ${englishNav} ` : ''}>
@@ -123,25 +100,26 @@ const Header = () => {
                         <li className={theme === 'Dark' ? `${dark}` : ''} ><NavLink to='about' className={theme === 'Dark' ? `dark` : `light`} >{language === 'English' ? 'About' : 'عنا'}</NavLink></li>
 
                         <li className={theme === 'Dark' ? `${dark}` : ''}>
-                            <select onFocus={this.size=3} name="language" value={language === "Arabic" ? "العربية" : "English"} style={theme === 'Dark' ? { color: 'white' } : { color: 'black' }}>
+                            <select onChange={(e) => { e.target.size = 1; e.target.blur() }} onBlur={(e) => { e.target.size = 0 }} onFocus={(e) => { e.target.size = 2 }} name="language" value={language === "Arabic" ? "العربية" : "English"} style={theme === 'Dark' ? { color: 'white' } : { color: 'black' }}>
                                 <option value="Arabic" onClick={changeToArabic}>{language === 'English' ? 'Arabic' : 'العربية'}</option>
                                 <option value="English" onClick={changeToEnglish}>{language === 'English' ? 'English' : 'الانجليزية'} </option>
                             </select>
                         </li>
                         <li   ><Button ><NavLink to='Login' style={{ color: 'black' }}>{language === 'Arabic' ? 'تسجبل الدخول' : "login"}</NavLink></Button></li>
                     </ul>
-                    {theme === 'Light' ?
-                        <div className={language === 'Arabic' ? ` ${arabicBurger} ${burger}` : ` ${burger} ${englishBurger}`}
-                            onClick={showToggleHandler}>
-                            <BurgerBlack style={{ width: '100%' }} />
-                        </div>
-                        : <div className={language === 'Arabic' ? ` ${arabicBurger} ${burger}` : ` ${burger} ${englishBurger}`}
-                            onClick={showToggleHandler}>
-                            <BurgerWhite style={{ width: '100%' }} />
-                        </div>
-                    }
+
 
                 </nav >
+                {theme === 'Light' ?
+                    <div className={language === 'Arabic' ? ` ${arabicBurger} ${burger}` : ` ${burger} ${englishBurger}`}
+                        onClick={showToggleHandler}>
+                        <BurgerBlack style={{ width: '100%' }} />
+                    </div>
+                    : <div className={language === 'Arabic' ? ` ${arabicBurger} ${burger}` : ` ${burger} ${englishBurger}`}
+                        onClick={showToggleHandler}>
+                        <BurgerWhite style={{ width: '100%' }} />
+                    </div>
+                }
             </Container>
         </header >
     )

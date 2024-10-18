@@ -1,32 +1,38 @@
-import Categories from '@pages/Categories/Categories';
-import { About, Landing, Login, Registeration } from '@pages/index';
-import News from '@pages/News/News';
+import SuspendPage from '@components/feedback/SuspendPage/SuspendPage';
+import { lazy } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import HomePage from 'src/HomePage';
+const HomePage = lazy(() => import('src/HomePage'));
+const Categories = lazy(() => import('@pages/Categories/Categories'));
+const About = lazy(() => import('@pages/About/About'));
+const Landing = lazy(() => import('@pages/Landing/Landing'));
+const Login = lazy(() => import('@pages/Login/Login'));
+const News = lazy(() => import('@pages/News/News'));
+const Registeration = lazy(() => import('@pages/Registeration/Registeration'));
+
 
 const AppRouter = () => {
     const router = createBrowserRouter([{
         path: '/',
-        element: <HomePage />,
+        element: <SuspendPage ><HomePage /></SuspendPage>,
         children: [{
             index: true, element: <Landing />
         },
         {
             path: 'categories',
-            element: <Categories />
+            element: <SuspendPage><Categories /></SuspendPage>
         }, {
             path: 'news',
-            element: <News />
+            element: <SuspendPage> <News /></SuspendPage>
         },
         {
             path: 'login',
-            element: <Login />
+            element: <SuspendPage><Login /></SuspendPage>
         }, {
             path: "registration",
-            element: <Registeration />
+            element: <SuspendPage><Registeration /></SuspendPage>
         }, {
             path: 'about',
-            element: <About />
+            element: <SuspendPage><About /></SuspendPage>
         }
         ]
     }])

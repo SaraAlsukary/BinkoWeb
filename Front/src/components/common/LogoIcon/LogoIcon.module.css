@@ -1,11 +1,9 @@
 .arabic {
-    position: 'relative';
-    left: 80px;
+    right: 0;
 }
 
 .english {
-    position: relative;
-    left: 80px;
+    left: 0;
 }
 
 @media (max-width:767px) {

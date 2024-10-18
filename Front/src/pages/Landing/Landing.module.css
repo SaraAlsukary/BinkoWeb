@@ -3,14 +3,15 @@
     align-items: center;
     justify-content: space-around;
     font-family: BinkoEng;
+    margin-top: 30px;
 
 }
 
 .landing .left {
     width: 500px;
-    margin-left: 100px;
 
 }
+
 
 .landing .left button {
     font-size: 22px;
@@ -33,9 +34,7 @@
 
 }
 
-.landing p.para {
-    margin-right: 97px;
-}
+
 
 .landing .left h2 {
     font-size: 40px;
@@ -44,7 +43,6 @@
 
 .landing .right {
     width: 400px;
-    margin-right: 100px;
 }
 
 @media (max-width:767px) {
@@ -67,9 +65,6 @@
         width: 100%;
     }
 
-    .landing .left p.mobile {
-        margin-right: 0;
-    }
 
     .landing .left button.arabic {
         margin-right: 37%;
@@ -78,4 +73,13 @@
     .landing .left button.english {
         margin-left: 50%;
     }
+}
+
+p.arabic {
+    font-family: BinkoAra;
+    font-size: 25px;
+}
+
+p.english {
+    font-family: BinkoEng;
 }
