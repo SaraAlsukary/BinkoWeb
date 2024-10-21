@@ -10,7 +10,7 @@ import {
     REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-
+import auth from "./auth/authSlice";
 import language from "./languageSlice/languageSlice";
 import theme from "./themeSlice/themeSlice";
 
@@ -49,6 +49,7 @@ const rootPersistConfig = {
 const rootReducer = combineReducers({
     language: language,
     theme: theme,
+    auth
 });
 const persistedReducer = persistReducer(rootPersistConfig, rootReducer);
 

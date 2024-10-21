@@ -5,6 +5,19 @@
     position: relative;
 }
 
+.prof {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+
+
+
+.prof.dark {
+    border: 1px solid #fff;
+}
+
 .headerContainer ul {
     display: flex;
     align-items: center;
@@ -155,6 +168,10 @@
     .headerContainer.dark {
         border-bottom: 1px solid #fff;
 
+    }
+
+    .headerContainer ul li {
+        margin-left: 0;
     }
 
     .burger {

@@ -1,4 +1,5 @@
 import SuspendPage from '@components/feedback/SuspendPage/SuspendPage';
+import { AddBook, Favorite, Profile, Settings } from '@pages/index';
 import { lazy } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 const HomePage = lazy(() => import('src/HomePage'));
@@ -33,8 +34,24 @@ const AppRouter = () => {
         }, {
             path: 'about',
             element: <SuspendPage><About /></SuspendPage>
+        }, {
+            path: 'profile',
+            element: <SuspendPage><Profile /></SuspendPage>
+        },
+        {
+            path: 'settings',
+            element: <SuspendPage><Settings /></SuspendPage>
+        },
+        {
+            path: 'addBook',
+            element: <SuspendPage><AddBook /></SuspendPage>
+        },
+        {
+            path: 'favorite',
+            element: <SuspendPage><Favorite /></SuspendPage>
         }
         ]
+
     }])
     return <RouterProvider router={router} />
 }

@@ -12,12 +12,13 @@ import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '@hooks/app';
 import { changeLanguageToArabic, changeLanguageToEnglish } from '@store/languageSlice/languageSlice';
 import { Container } from 'react-bootstrap';
-const { headerContainer, searchIcon, navStyle, search, burger, show, dark, arabicNav, englishNav, icon, arabic, english, arabicBurger, englishBurger } = Styles;
+const { headerContainer, searchIcon, navStyle, prof, search, burger, show, dark, arabicNav, englishNav, icon, arabic, english, arabicBurger, englishBurger } = Styles;
 const Header = () => {
     const [toggle, setToggle] = useState(false);
     const dispatch = useAppDispatch();
     const { theme } = useAppSelector(state => state.theme);
     const { language } = useAppSelector(state => state.language);
+    const { authState } = useAppSelector(state => state.auth)
 
     const showToggleHandler = () => {
         setToggle(!toggle);
@@ -105,8 +106,11 @@ const Header = () => {
                                 <option value="English" onClick={changeToEnglish}>{language === 'English' ? 'English' : 'الانجليزية'} </option>
                             </select>
                         </li>
-                        <li   ><Button ><NavLink to='Login' style={{ color: 'black' }}>{language === 'Arabic' ? 'تسجبل الدخول' : "login"}</NavLink></Button></li>
-                    </ul>
+                        {authState ?
+                            <li><NavLink to='profile' ><div className={theme === 'Dark' ? `${prof} ${dark}` : `${prof}`}></div></NavLink></li>
+
+                            : <li><Button ><NavLink to='Login' style={{ color: 'black' }}>{language === 'Arabic' ? 'تسجبل الدخول' : "login"}</NavLink></Button></li>
+                        }</ul>
 
 
                 </nav >

@@ -23,7 +23,7 @@ const Login = () => {
                         </div>
                         <p className={forgot}>{language === 'English' ? 'Forgot Password?' : 'نسيت كلمة المرور؟'}</p>
                         <div className={regInput}>
-                            <Input style={{ backgroundColor: 'var(--secondary-color)' }} value={language === 'English' ? 'Register' : 'تسجيل'} type="submit" />
+                            <Input style={{ backgroundColor: 'var(--secondary-color)' }} value={language === 'English' ? 'Login' : 'تسجيل'} type="submit" />
                         </div>
 
                         <p onClick={() => navigate('/registration')} className={account}>{language === 'English' ? 'Create a new account' : ' انشاء حساب جديد'}</p>

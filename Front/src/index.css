@@ -56,3 +56,18 @@ a.light {
 a.active {
   color: var(--main-color);
 }
+
+.mark {
+  transform: rotate(270deg);
+  z-index: -100;
+  transition: .3s;
+}
+
+a .mark {
+  display: none;
+}
+
+.active .mark {
+  display: block;
+
+}
