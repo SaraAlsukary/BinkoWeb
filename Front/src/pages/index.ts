@@ -10,6 +10,7 @@ import News from '@pages/News/News';
 import Books from '@pages/Books/Books';
 import BooksInfo from '@pages/BooksInfo/BooksInfo';
 import Chapters from '@pages/Chapters/Chapters';
+import BooksSearch from '@pages/BooksSearch/BooksSearch';
 
 
-export { Landing, Login, Chapters, News, Registeration, About, Profile, AddBook, Settings, Favorite, Books, BooksInfo }
+export { Landing, Login, Chapters, News, Registeration, About, Profile, BooksSearch, AddBook, Settings, Favorite, Books, BooksInfo }

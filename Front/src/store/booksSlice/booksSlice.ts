@@ -3,26 +3,26 @@ import bookImage from '@assets/imgs/books/olivertwist.jfif'
 
 const initialState = [{
     id: 2,
-    title: 'OLiver Twist',
-    Author: 'Charles Deckenes',
+    title: 'Broken Wings',
+    Author: 'Jobran Khalil Jobran',
     img: bookImage,
     desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.Asperiores, aperiam beata...'
 }, {
     id: 3,
-    title: 'OLiver Twist',
-    Author: 'Charles Deckenes',
+    title: 'حجر الأرواح',
+    Author: 'Sara Alsukary',
     img: bookImage,
     desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.Asperiores, aperiam beata...'
 }, {
     id: 4,
-    title: 'OLiver Twist',
-    Author: 'Charles Deckenes',
+    title: 'الجريمة والعقاب',
+    Author: 'دستويفسكي',
     img: bookImage,
     desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.Asperiores, aperiam beata...'
 }, {
     id: 5,
-    title: 'OLiver Twist',
-    Author: 'Charles Deckenes',
+    title: 'Les Mesrable',
+    Author: 'Victore Hugo',
     img: bookImage,
     desc: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.Asperiores, aperiam beata...'
 }, {

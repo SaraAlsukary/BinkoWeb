@@ -15,6 +15,7 @@
 
 .booCard.arabic {
     direction: rtl;
+    font-family: binkoara;
 }
 
 .booCard .pic {

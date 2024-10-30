@@ -15,6 +15,7 @@ const Favorite = lazy(() => import('@pages/Favorite/Favorite'));
 const Profile = lazy(() => import('@pages/Profile/Profile'));
 const Settings = lazy(() => import('@pages/Settings/Settings'));
 const Chapters = lazy(() => import('@pages/Chapters/Chapters'));
+const BooksSearch = lazy(() => import('@pages/BooksSearch/BooksSearch'));
 
 
 const AppRouter = () => {
@@ -23,6 +24,9 @@ const AppRouter = () => {
         element: <SuspendPage ><HomePage /></SuspendPage>,
         children: [{
             index: true, element: <Landing />
+        }, {
+            path: 'booksSearch',
+            element: <SuspendPage><BooksSearch /></SuspendPage>
         },
         {
             path: 'categories',

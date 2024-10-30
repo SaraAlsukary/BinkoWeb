@@ -9,10 +9,11 @@ type TInput = {
     style?: React.CSSProperties,
     value?: string
     onFocus?: () => void
+    onChange?: (e: any) => void
 }
-const Input = ({ value, type, placeholder, style, onFocus }: TInput) => {
+const Input = ({ value, type, placeholder, style, onFocus, onChange }: TInput) => {
     const language = useAppSelector(state => state.language.language)
-    return <input value={value} type={type} style={style} onFocus={onFocus} className={language === 'English' ? `${inputStyle} ${english}` : `${inputStyle} ${arabic}`} placeholder={placeholder} />
+    return <input value={value} type={type} style={style} onChange={onChange} onFocus={onFocus} className={language === 'English' ? `${inputStyle} ${english}` : `${inputStyle} ${arabic}`} placeholder={placeholder} />
 }
 
 export default Input
