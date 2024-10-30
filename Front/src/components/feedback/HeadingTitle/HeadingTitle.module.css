@@ -1,0 +1,36 @@
+.headingContainer {
+    margin-top: 100px;
+}
+
+.headingContainer h2 {
+    position: relative;
+    left: 15px;
+    font-size: 39px;
+    color: var(--main-color);
+}
+
+.headingContainer.arabic {
+    right: 15px;
+}
+
+.headingContainer h2::after {
+    content: '';
+    position: absolute;
+    left: 70px;
+    bottom: 0;
+    background-color: var(--secondary-color);
+    width: 91%;
+    height: 1px;
+}
+
+@media (max-width:767px) {
+    .headingContainer h2::after {
+
+        width: 77%;
+
+    }
+}
+
+.headingContainer.arabic h2::after {
+    right: 60px;
+}

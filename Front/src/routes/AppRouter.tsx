@@ -1,5 +1,4 @@
 import SuspendPage from '@components/feedback/SuspendPage/SuspendPage';
-import { AddBook, Favorite, Profile, Settings } from '@pages/index';
 import { lazy } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 const HomePage = lazy(() => import('src/HomePage'));
@@ -9,6 +8,13 @@ const Landing = lazy(() => import('@pages/Landing/Landing'));
 const Login = lazy(() => import('@pages/Login/Login'));
 const News = lazy(() => import('@pages/News/News'));
 const Registeration = lazy(() => import('@pages/Registeration/Registeration'));
+const Books = lazy(() => import('@pages/Books/Books'));
+const BooksInfo = lazy(() => import('@pages/BooksInfo/BooksInfo'));
+const AddBook = lazy(() => import('@pages/AddBook/AddBook'));
+const Favorite = lazy(() => import('@pages/Favorite/Favorite'));
+const Profile = lazy(() => import('@pages/Profile/Profile'));
+const Settings = lazy(() => import('@pages/Settings/Settings'));
+const Chapters = lazy(() => import('@pages/Chapters/Chapters'));
 
 
 const AppRouter = () => {
@@ -49,7 +55,19 @@ const AppRouter = () => {
         {
             path: 'favorite',
             element: <SuspendPage><Favorite /></SuspendPage>
+        }, {
+            path: 'books',
+            element: <SuspendPage><Books /></SuspendPage>,
+        },
+        {
+            path: 'books/:id',
+            element: <SuspendPage><BooksInfo /></SuspendPage>,
+        },
+        {
+            path: 'books/:id/:idChapter',
+            element: <SuspendPage><Chapters /></SuspendPage>,
         }
+
         ]
 
     }])

@@ -190,9 +190,16 @@ hr {
     }
 }
 
+@media (min-width:992px) and (max-width:1199px) {
+    .cards2 .left {
+        left: 58px;
+        width: 416px;
+    }
+}
+
 .pic3 {
     width: 1110px;
-    position: absolute;
+    position: relative;
 }
 
 .pic3 img {
@@ -213,7 +220,7 @@ hr {
 
 .pic3 span {
     display: block;
-    width: 1110px;
+    width: 100%;
     height: 200px;
     position: absolute;
     transform: translate(-50%, -50%);
@@ -225,7 +232,7 @@ hr {
 @media (max-width:767px) {
     .pic3 {
         width: 540px;
-        margin-top: 220px;
+        margin-top: 250px;
     }
 
     .pic3 p {
@@ -234,14 +241,20 @@ hr {
     }
 
     .pic3 span {
-        width: 540px;
+
         height: 150px;
+    }
+}
+
+@media (min-width:992px) and (max-width:1199px) {
+    .pic3 {
+        width: 960px;
     }
 }
 
 @media (min-width:767px) and (max-width:991px) {
     .pic3 {
-        width: 720;
+        width: 720px;
     }
 
     .pic3 p {
@@ -250,7 +263,7 @@ hr {
     }
 
     .pic3 span {
-        width: 720px;
+
         height: 150px;
     }
 }

@@ -39,7 +39,7 @@
     .settings {
         left: 50%;
         transform: translateX(-50%) rotate(-90deg);
-        top: 70%;
+        top: 75%;
         position: fixed;
         background: var(--main-color);
         height: 323px;

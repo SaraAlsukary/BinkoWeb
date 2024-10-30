@@ -11,8 +11,11 @@ import {
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import auth from "./auth/authSlice";
+import books from "./booksSlice/booksSlice";
 import language from "./languageSlice/languageSlice";
 import theme from "./themeSlice/themeSlice";
+import chapters from "./chaptersSlice/chaptersSlice";
+import comments from "./commentsSlice/commentsSlice";
 
 // const rootPersistConfig = {
 //     key: "root",
@@ -49,7 +52,10 @@ const rootPersistConfig = {
 const rootReducer = combineReducers({
     language: language,
     theme: theme,
-    auth
+    auth,
+    books,
+    chapters,
+    comments
 });
 const persistedReducer = persistReducer(rootPersistConfig, rootReducer);
 

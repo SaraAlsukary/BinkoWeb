@@ -1,0 +1,37 @@
+.chapterCont {
+    position: relative;
+}
+
+.chapterCont .down {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.chapterCont .down .buttn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.chapterCont .down .buttn button {
+    width: 80%;
+    background-color: transparent;
+    color: var(--main-color);
+    transition: .3s;
+    border: 2px solid var(--main-color);
+}
+
+.chapterCont .down .buttn button:hover {
+    background-color: var(--main-color);
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.chapterCont .down .text h1 {
+    color: var(--secondary-color);
+}
+
+.chapterCont .down .text p {
+    font-size: 22px;
+}

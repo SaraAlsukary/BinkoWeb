@@ -1,7 +1,7 @@
-import { Header } from "@components/common"
-import Menu from "@components/common/Menu/Menu"
+import { Footer, Header, Menu } from "@components/common";
+
 import { useAppSelector } from "@hooks/app";
-import { Outlet } from "react-router-dom"
+import { Outlet } from "react-router-dom";
 
 
 
@@ -11,13 +11,15 @@ const HomePage = () => {
   return (
     <>
       <Header />
-      <div >
+      <div>
         <Outlet />
       </div>
       {authState ? <Menu /> : ''}
+
+      <Footer />
 
     </>
   )
 }
 
-export default HomePage
+export default HomePage;

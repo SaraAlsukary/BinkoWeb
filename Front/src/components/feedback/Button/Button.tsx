@@ -5,12 +5,14 @@ const { buttonStyle, arabic, english } = Style;
 type TButton = {
     children: React.ReactNode,
     style?: React.CSSProperties,
-    className?: string
+    className?: string,
+    disabled?: boolean,
+    onClick?: () => void
 }
-const Button = ({ children, style, className }: TButton) => {
+const Button = ({ children, style, className, onClick, disabled }: TButton) => {
     const language = useAppSelector(state => state.language.language);
     return (
-        <button style={style} className={language === 'Arabic' ? `${arabic} ${buttonStyle} ${className}` : `${english} ${buttonStyle} ${className}`}>{children}</button>
+        <button disabled={disabled} onClick={onClick} style={style} className={language === 'Arabic' ? `${arabic} ${buttonStyle} ${className}` : `${english} ${buttonStyle} ${className}`}>{children}</button>
     )
 }
 

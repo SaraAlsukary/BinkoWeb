@@ -1,4 +1,5 @@
 import TLanguage from "./languge";
 import TTheme from "./theme";
-
-export { TLanguage, TTheme }
+import { TBookList } from "./bookCardProps";
+import { TBooks } from "./booksType";
+export { TLanguage, TTheme, TBooks, TBookList }
