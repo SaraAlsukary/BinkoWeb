@@ -22,7 +22,9 @@ const Header = () => {
     const { language } = useAppSelector(state => state.language);
     const { authState } = useAppSelector(state => state.auth)
     const location: any = useLocation();
-
+    const showToggleHandler = () => {
+        setToggle(!toggle);
+    }
     const changeToDark = () => {
         dispatch(changeThemeToDark());
         document.body.style.backgroundColor = 'var(--main-bg-dark-color)';
@@ -64,18 +66,6 @@ const Header = () => {
 
         }
     }
-    const closeToggle = () => {
-        const bur = document.getElementById('toggle');
-        document.body.addEventListener('click', (e: any) => {
-            if (bur?.contains(e?.target)) {
-
-                setToggle(true);
-            } else if (!bur?.contains(e?.target)) {
-                setToggle(false);
-            }
-        })
-    }
-    closeToggle();
     changeLanguage();
     changeThemeColor();
     return (
@@ -120,12 +110,12 @@ const Header = () => {
 
                 </nav >
                 {theme === 'Light' ?
-                    <div id='toggle' className={language === 'Arabic' ? ` ${arabicBurger} ${burger}` : ` ${burger} ${englishBurger}`}
-                    >
+                    <div className={language === 'Arabic' ? ` ${arabicBurger} ${burger}` : ` ${burger} ${englishBurger}`}
+                        onClick={showToggleHandler}>
                         <BurgerBlack style={{ width: '100%' }} />
                     </div>
-                    : <div id='toggle' className={language === 'Arabic' ? ` ${arabicBurger} ${burger}` : ` ${burger} ${englishBurger}`}
-                    >
+                    : <div className={language === 'Arabic' ? ` ${arabicBurger} ${burger}` : ` ${burger} ${englishBurger}`}
+                        onClick={showToggleHandler}>
                         <BurgerWhite style={{ width: '100%' }} />
                     </div>
                 }
