@@ -1,0 +1,1 @@
+import{j as a}from"./index-CZ3XpK8X.js";import{a as r}from"./app-CyQQxkk4.js";const s="_headingContainer_zbg1p_1",o="_arabic_zbg1p_12",c={headingContainer:s,arabic:o},{headingContainer:n,arabic:g}=c,d=({children:e})=>{const{language:i}=r(t=>t.language);return a.jsx("div",{className:i==="English"?`${n}`:`${n} ${g}`,children:a.jsx("h2",{children:e})})};export{d as H};
