@@ -12,7 +12,7 @@ import BookMark from '@assets/svgs/bookMarkGreen.svg?react';
 import BookMarkWhite from '@assets/svgs/bookMarkWhite.svg?react';
 import Read from '@assets/svgs/read.svg?react';
 const { left, pic, author, boxCont, photo, reply, replyBox, replyer, replyerName, replyList, commentsList, authInfo, icons, commenter, commenterName,
-  text, bookCont, nameAuth, buttn, icon, activeIcon, inputField, arabic, descAuth, right, list, up, down, active, cate, loves, input, desc, comments, box } = style;
+  text, bookCont, nameAuth, buttn, icon, activeIcon, inputField, descAuth, right, list, up, down, active, cate, loves, input, desc, comments, box } = style;
 const BooksInfo = () => {
   const { language } = useAppSelector(state => state.language)
   const { id }: any = useParams();
@@ -130,7 +130,7 @@ const BooksInfo = () => {
   </div >);
   const chaptersList = chapters.map((chapter, idx) => <li key={chapter.id} onClick={() => navigate(`${idx}`)}>{chapter.title}</li>)
   return (
-    <Container className={language === 'English' ? `${bookCont}` : `${bookCont} ${arabic}`} >
+    <Container className={bookCont} >
       <div className={left}>
         <div className={pic}>
           <img src={bookInfo?.img} alt="" />

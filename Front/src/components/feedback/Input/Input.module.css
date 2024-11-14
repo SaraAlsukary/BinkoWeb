@@ -7,23 +7,23 @@
     font-weight: bold;
 }
 
-.inputStyle.english {
+[data-lang='English'] .inputStyle {
     font-family: BinkoEng;
     padding-left: 10px;
 }
 
-.inputStyle.arabic {
+[data-lang='Arabic'] .inputStyle {
     font-family: BinkoAra;
     padding-right: 10px;
 
 }
 
-input[type='submit'].inputStyle.english {
+[data-lang='English'] input[type='submit'].inputStyle {
     font-family: Binko2Eng;
     font-size: 20px;
 }
 
-input[type='submit'].inputStyle.arabic {
+[data-lang='Arabic'] input[type='submit'].inputStyle {
     font-family: BinkoAra;
     font-size: 20px;
 }

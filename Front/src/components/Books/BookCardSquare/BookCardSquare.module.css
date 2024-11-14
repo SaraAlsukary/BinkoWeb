@@ -13,7 +13,7 @@
     cursor: pointer;
 }
 
-.booCard.arabic {
+[data-lang='Arabic'] .booCard {
     direction: rtl;
     font-family: binkoara;
 }
@@ -25,6 +25,7 @@
     width: 200px;
     margin-bottom: 20px;
     left: 16px;
+    border: 2px solid var(--main-color);
 
 }
 
@@ -49,7 +50,15 @@
     width: 250px;
 }
 
-.booCard.arabic .text {
+[data-lang='English'] .booCard .text p {
+    font-size: 11px;
+}
+
+[data-lang='Arabic'] .booCard .text p {
+    font-size: 13px;
+}
+
+[data-lang='Arabic'] .booCard .text {
     direction: rtl;
     margin-right: 20px;
     left: 0;
@@ -81,7 +90,22 @@
 
 
     .booCard .text {
-        width: 216px;
+        width: 210px;
     }
 
+}
+
+@media (max-width:767px) {
+    .booCard {
+        width: 360px;
+    }
+
+    .booCard .pic {
+        height: 230px;
+        width: 150px;
+    }
+
+    .booCard .text {
+        width: 180px;
+    }
 }

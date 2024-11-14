@@ -49,7 +49,7 @@ const LottieHandler = ({ type, message, className, loop, style }: LottieHandlerP
     //         : { fontSize: "19px", marginTop: "30px" };
 
     return (
-        <div className={`d-flex flex-column align-items-center ${className}`}>
+        <div className={` ${className}`}>
             <Lottie animationData={lottie} style={style} loop={loop} />
             {message && <h3 style={{ margin: '120px auto', textAlign: 'center', color: 'var(--main-color)' }}
             // style={messageStyle}

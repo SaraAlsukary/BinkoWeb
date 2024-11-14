@@ -26,7 +26,7 @@ const Login = () => {
                             <Input style={{ backgroundColor: 'var(--secondary-color)' }} value={language === 'English' ? 'Login' : 'تسجيل'} type="submit" />
                         </div>
 
-                        <p onClick={() => navigate('/registration')} className={account}>{language === 'English' ? 'Create a new account' : ' انشاء حساب جديد'}</p>
+                        <p onClick={() => navigate('/Binko/registration')} className={account}>{language === 'English' ? 'Create a new account' : ' انشاء حساب جديد'}</p>
 
                     </div>
 

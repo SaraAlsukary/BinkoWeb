@@ -4,7 +4,7 @@ type TAuth = {
     authState: boolean
 }
 const initialState: TAuth = {
-    authState: true
+    authState: false
 }
 const authSlice = createSlice({
     name: 'auth',

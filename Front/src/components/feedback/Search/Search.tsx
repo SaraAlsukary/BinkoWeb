@@ -4,7 +4,7 @@ import style from './Search.module.css';
 import './SearchAddition.css';
 import Input from '../Input/Input';
 import { useNavigate } from 'react-router-dom';
-const { arabic, english, searchIcon, search } = style;
+const { searchIcon, search } = style;
 type TClass = {
     isThereNavigate?: boolean
     className?: string,
@@ -16,12 +16,12 @@ const Search = ({ className, isThereNavigate, checkLocate, onChange }: TClass) =
     const navigate = useNavigate();
 
     return (
-        <div style={checkLocate ? { display: 'none' } : {}} className={language === 'Arabic' ? `${arabic} ${search} ${className}` : `${english} ${search} ${className}`} >
+        <div style={checkLocate ? { display: 'none' } : {}} className={`${search} ${className}`} >
             <Input type='search'
                 onChange={onChange}
                 onFocus={() => { isThereNavigate ? navigate('booksSearch') : '' }}
                 placeholder={language === 'Arabic' ? 'ابحث' : 'search here..'} />
-            <div className={language === 'Arabic' ? `${arabic} ${searchIcon}` : `${english} ${searchIcon}`}>
+            <div className={searchIcon}>
                 <SearchIcon style={language === 'Arabic' ? { width: '100%', height: '100%', position: 'absolute', right: '0' } : {
                     width: '100%',
                     height: '100%',

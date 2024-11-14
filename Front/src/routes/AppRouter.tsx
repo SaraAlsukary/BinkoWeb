@@ -1,10 +1,10 @@
 import SuspendPage from '@components/feedback/SuspendPage/SuspendPage';
+import { useAppSelector } from '@hooks/app';
 import { lazy } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 const HomePage = lazy(() => import('src/HomePage'));
 const Categories = lazy(() => import('@pages/Categories/Categories'));
 const About = lazy(() => import('@pages/About/About'));
-const Landing = lazy(() => import('@pages/Landing/Landing'));
 const Login = lazy(() => import('@pages/Login/Login'));
 const News = lazy(() => import('@pages/News/News'));
 const Registeration = lazy(() => import('@pages/Registeration/Registeration'));
@@ -16,15 +16,24 @@ const Profile = lazy(() => import('@pages/Profile/Profile'));
 const Settings = lazy(() => import('@pages/Settings/Settings'));
 const Chapters = lazy(() => import('@pages/Chapters/Chapters'));
 const BooksSearch = lazy(() => import('@pages/BooksSearch/BooksSearch'));
+const Home = lazy(() => import('@pages/Home/Home'));
 
 
 const AppRouter = () => {
+    const { theme } = useAppSelector(state => state.theme);
+    const { language } = useAppSelector(state => state.language);
+    document.body.dataset.theme = theme;
+    document.body.dataset.lang = language;
     const router = createBrowserRouter([{
-        path: '/',
+        path: '/Binko',
         element: <SuspendPage ><HomePage /></SuspendPage>,
         children: [{
-            index: true, element: <Landing />
+            index: true, element: <Home />,
         }, {
+            path: '/Binko/home',
+            element: <SuspendPage> <Home /></SuspendPage>
+        },
+        {
             path: 'booksSearch',
             element: <SuspendPage><BooksSearch /></SuspendPage>
         },

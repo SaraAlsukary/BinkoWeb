@@ -21,11 +21,11 @@
 
 }
 
-.searchIcon.english {
+[data-lang='English'] .searchIcon {
     left: -40px;
 }
 
-.searchIcon.arabic {
+[data-lang='Arabic'] .searchIcon.arabic {
     right: -34px;
     ;
 }

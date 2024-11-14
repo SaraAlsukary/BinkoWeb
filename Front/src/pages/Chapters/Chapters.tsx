@@ -6,7 +6,7 @@ import { Container } from 'react-bootstrap';
 import { Button } from '@components/feedback';
 import { useState } from 'react';
 import ChapterMenu from '@components/Chapters/ChapterMenu/ChapterMenu';
-const { text, down, english, buttn, chapterCont } = style;
+const { text, down, buttn, chapterCont } = style;
 const Chapters = () => {
     const [disNext, setDisNext] = useState(false);
     const [disPrev, setDisPrev] = useState(false);
@@ -27,7 +27,7 @@ const Chapters = () => {
         } else {
             setDisNext(false);
             prevChapter = index - 1;
-            navigate(`/books/${param.id}/${prevChapter}`);
+            navigate(`/Binko/books/${param.id}/${prevChapter}`);
 
         }
 
@@ -46,7 +46,7 @@ const Chapters = () => {
             setDisPrev(false);
 
             nextChapter = index + 1;
-            navigate(`/books/${param.id}/${nextChapter}`);
+            navigate(`/Binko/books/${param.id}/${nextChapter}`);
 
         }
 
@@ -55,7 +55,7 @@ const Chapters = () => {
 
 
     return (
-        <Container className={language === 'Arabic' ? `${chapterCont}` : `${chapterCont} ${english}`}>
+        <Container className={chapterCont}>
             <ChapterMenu />
             <div className={down}>
 

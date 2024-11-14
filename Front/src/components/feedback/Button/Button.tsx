@@ -1,6 +1,5 @@
-import { useAppSelector } from '@hooks/app';
 import Style from './Button.module.css';
-const { buttonStyle, arabic, english } = Style;
+const { buttonStyle } = Style;
 
 type TButton = {
     children: React.ReactNode,
@@ -10,9 +9,8 @@ type TButton = {
     onClick?: () => void
 }
 const Button = ({ children, style, className, onClick, disabled }: TButton) => {
-    const language = useAppSelector(state => state.language.language);
     return (
-        <button disabled={disabled} onClick={onClick} style={style} className={language === 'Arabic' ? `${arabic} ${buttonStyle} ${className}` : `${english} ${buttonStyle} ${className}`}>{children}</button>
+        <button disabled={disabled} onClick={onClick} style={style} className={` ${buttonStyle} ${className}`}>{children}</button>
     )
 }
 

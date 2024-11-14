@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { TLanguage } from "@types";
+import TLanguage from "@customtypes/languge";
 
 const initialState: TLanguage = { language: "English" }
 const languageSlice = createSlice({

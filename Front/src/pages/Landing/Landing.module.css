@@ -20,11 +20,11 @@
     transform: translateX(-50%);
 }
 
-.landing .left button.arabic {
+[data-lang='Arabic'] .landing .left button {
     margin-right: 50%;
 }
 
-.landing .left button.english {
+[data-lang='English'] .landing .left button {
     font-family: Binko2Eng;
     margin-left: 50%;
 }
@@ -52,12 +52,15 @@
         align-items: center;
     }
 
-    .landing .left,
+
     .landing .right {
-        margin: 0;
+        width: 390px;
     }
 
-
+    .landing .left {
+        width: 300px;
+        position: relative;
+    }
 
     .landing .left p {
         text-align: center;
@@ -66,12 +69,12 @@
     }
 
 
-    .landing .left button.arabic {
-        margin-right: 37%;
-    }
 
-    .landing .left button.english {
-        margin-left: 50%;
+    [data-lang='Arabic'] .landing .left button,
+    [data-lang='English'] .landing .left button {
+        margin: 0;
+        left: 50%;
+        position: absolute;
     }
 }
 

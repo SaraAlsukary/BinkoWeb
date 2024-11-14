@@ -143,8 +143,8 @@
     transform: translate(-50%, -50%);
 }
 
-.bookCont.arabic .right .up ul li .icons .icon,
-.bookCont.arabic .right .up ul li .icons .activeIcon {
+[data-lang='Arabic'] .bookCont .right .up ul li .icons .icon,
+[data-lang='Arabic'] .bookCont .right .up ul li .icons .activeIcon {
     right: -30px;
 }
 
@@ -212,7 +212,7 @@
     cursor: pointer;
 }
 
-.bookCont.arabic .right .down .comments .icon {
+[data-lang='Arabic'] .bookCont .right .down .comments .icon {
     right: calc(100% - 50px);
 }
 
@@ -335,7 +335,7 @@
     display: block;
 }
 
-.bookCont.arabic .right .down .comments .commentsList .reply {
+[data-lang='Arabic'] .bookCont .right .down .comments .commentsList .reply {
     font-family: binkoara;
 }
 

@@ -13,7 +13,7 @@
     left: -56px;
 }
 
-.icons.arabic {
+[data-lang='Arabic'] .icons {
     left: 66px;
 }
 
@@ -28,18 +28,39 @@
     z-index: 100;
 }
 
-@media (min-width:768px) and (max-width:991px) {
+@media (min-width:801px) and (max-width:991px) {
     .settings {
         left: -31px;
     }
 
 }
 
-@media (max-width:767px) {
+@media (max-width:800px) {
     .settings {
         left: 50%;
         transform: translateX(-50%) rotate(-90deg);
         top: 70%;
+        position: fixed;
+        background: var(--main-color);
+        height: 323px;
+        border-radius: 16px;
+    }
+
+    .icons {
+        width: 153px;
+        height: 81px;
+    }
+
+    .icon {
+        transform: rotate(90deg);
+    }
+}
+
+@media (max-width:392px) {
+    .settings {
+        left: 50%;
+        transform: translateX(-50%) rotate(-90deg);
+        top: 75%;
         position: fixed;
         background: var(--main-color);
         height: 323px;

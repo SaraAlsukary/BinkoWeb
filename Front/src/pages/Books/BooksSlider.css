@@ -9,3 +9,13 @@
 .slick-dots li.slick-active button::before {
     color: var(--secondary-color);
 }
+
+@media (max-width:767px) {
+
+    .slick-next::before,
+    .slick-prev::before {
+        display: none;
+    }
+
+
+}

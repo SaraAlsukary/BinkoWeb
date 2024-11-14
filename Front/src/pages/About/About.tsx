@@ -1,21 +1,29 @@
 import { Container } from 'react-bootstrap';
 import Styles from './About.module.css';
 import LottieHandler from '@components/feedback/lottieHandler/lottieHandler';
-const { pic, parag, aboutContainer } = Styles
+import { useAppSelector } from '@hooks/app';
+const { pic, parag, aboutContainer, cont } = Styles
 const About = () => {
+    const { language } = useAppSelector(state => state.language);
+
     return (
-        <Container >
-            <div className={aboutContainer}>
+        <div className={aboutContainer}>
+            <Container className={cont}>
                 <div className={pic}>
-                    <LottieHandler type='BooksAbout' loop={true} style={{ width: '300px' }} />
+                    <LottieHandler type='BooksAbout' loop={true} style={{
+                        width: '300px', position: 'absolute',
+                        left: '0',
+                        top: '30%'
+                    }} />
                 </div>
                 <div className={parag}>
-                    <h2>Welcome</h2>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam esse harum nobis corrupti veniam, quas doloribus eius ad! Nobis iusto quam deleniti iste in alias, ullam consequuntur officia totam amet.</p>
+                    <h2>{language === 'English' ? "Welcome to Our Community Binko!" : "مرحبا بكم في  بينكو!"}</h2>
+                    <p> {language === 'English' ? 'This Community offers you many beautiful books in different field. It allows you to interact with these books and add your comments expressing your opinions about these books. We hope you like it' :
+                        " هذا المجتمع يقدم لكم العديد من الكتب الجميلة في مجالات مختلفة. و يتيح لكم إمكانية التفاعل مع هذه الكتب و إضافة تعليقاتكم المعبرة عن آرائكم بهذه الكتب. نتمنى ان ينال إعجابكم"}</p>
                 </div>
-            </div>
 
-        </Container>
+            </Container>
+        </div>
     )
 }
 

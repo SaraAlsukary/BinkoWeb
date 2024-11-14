@@ -9,7 +9,7 @@
     color: var(--main-color);
 }
 
-.headingContainer.arabic {
+[data-lang='Arabic'] .headingContainer {
     right: 15px;
 }
 
@@ -29,8 +29,18 @@
         width: 77%;
 
     }
+
+    .headingContainer h2 {
+        margin: 0;
+        left: 0;
+    }
+
+    [data-lang='English'] .headingContainer h2 {
+        font-size: 30px;
+
+    }
 }
 
-.headingContainer.arabic h2::after {
+[data-lang='Arabic'] .headingContainer h2::after {
     right: 60px;
 }

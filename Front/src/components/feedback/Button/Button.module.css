@@ -4,10 +4,10 @@
     padding: 3px 8px;
 }
 
-.buttonStyle.arabic {
+[data-lang='Arabic'] .buttonStyle {
     font-family: BinkoAra;
 }
 
-.buttonStyle.english {
+[data-lang='English'] .buttonStyle {
     font-family: Binko2Eng;
 }

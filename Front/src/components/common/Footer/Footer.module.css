@@ -7,7 +7,7 @@
 
 }
 
-.footerContainer.dark {
+[data-theme='Dark'] .footerContainer {
     border-top: 1px solid #fff;
 }
 

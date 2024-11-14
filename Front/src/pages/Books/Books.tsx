@@ -20,8 +20,8 @@ const Books = () => {
     const booksCardsBackground = books.map((book => <BooksBackground key={book.id} img={image} />));
     return (
 
-        <Container>
-            <div className={bookContainer}>
+        <div className={bookContainer}>
+            <Container>
 
                 <BookCardList settings={settingsBackground} type={square}>
                     {booksCardsBackground}
@@ -39,8 +39,8 @@ const Books = () => {
                     {booksCardsSquare}
                 </BookCardList>
 
-            </div >
-        </Container>
+            </Container>
+        </div >
     )
 }
 

@@ -1,6 +1,11 @@
+.NewsContainer {
+    padding: 100px 0;
+}
+
 .news {
     position: relative;
-    margin-top: 30px;
+    margin: 107px 0;
+
     height: 700px;
 }
 
@@ -8,7 +13,8 @@
     display: flex;
 }
 
-.pic {
+.pic,
+.pic3 {
     width: 100%;
 }
 
@@ -60,31 +66,16 @@
     background-color: var(--main-color);
 }
 
+[data-lang="Arabic"] .cards .left h2::before {
+
+    right: 0;
+
+}
+
 hr {
     background-color: var(--main-color);
 }
 
-@media (max-width:767px) {
-    .news {
-        height: 580px;
-    }
-
-    .cards .right,
-    .cards .left {
-        width: 250px;
-        height: fit-content;
-    }
-
-    .cards .right {
-        right: 5px;
-        top: -70px;
-    }
-
-    .cards .left {
-        left: 9px;
-        top: -100px;
-    }
-}
 
 @media (min-width:768px) and (max-width:991px) {
     .news {
@@ -102,6 +93,7 @@ hr {
         width: 300px;
     }
 }
+
 
 .pic2 {
     width: 500px;
@@ -147,58 +139,9 @@ hr {
     background-color: var(--main-color);
 }
 
-@media (max-width:767px) {
-    .news2 {
-        flex-direction: column;
-    }
-
-
-    .cards2 {
-        left: 0;
-        top: 100%;
-        margin-top: 20px;
-    }
-
-    .cards2 .left::after {
-        top: 140px;
-        width: 70px;
-        height: 70px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-}
-
-@media (min-width:768px) and (max-width:991px) {
-
-    .pic2 {
-        width: 400px;
-    }
-
-    .cards2 .left {
-        width: 250px;
-    }
-
-    .cards2 {
-        right: 450px;
-    }
-
-    .cards2 .left::after {
-        width: 70px;
-        height: 70px;
-        top: 100%;
-        left: 181px;
-    }
-}
-
-@media (min-width:992px) and (max-width:1199px) {
-    .cards2 .left {
-        left: 58px;
-        width: 416px;
-    }
-}
 
 .pic3 {
-    width: 1110px;
+    width: 100%;
     position: relative;
 }
 
@@ -229,11 +172,38 @@ hr {
     left: 50%;
 }
 
-@media (max-width:767px) {
-    .pic3 {
-        width: 540px;
-        margin-top: 250px;
+
+@media (min-width:768px) and (max-width:991px) {
+
+    .pic2 {
+        width: 400px;
     }
+
+    .cards2 .left {
+        width: 250px;
+    }
+
+    .cards2 {
+        right: 450px;
+    }
+
+    .cards2 .left::after {
+        width: 70px;
+        height: 70px;
+        top: 100%;
+        left: 181px;
+    }
+}
+
+@media (min-width:992px) and (max-width:1199px) {
+    .cards2 .left {
+        left: 58px;
+        width: 416px;
+    }
+}
+
+@media (min-width:767px) and (max-width:991px) {
+
 
     .pic3 p {
         width: 300px;
@@ -246,15 +216,70 @@ hr {
     }
 }
 
-@media (min-width:992px) and (max-width:1199px) {
-    .pic3 {
-        width: 960px;
-    }
-}
+@media (max-width:767px) {
+    .news {
+        height: 800px;
 
-@media (min-width:767px) and (max-width:991px) {
-    .pic3 {
-        width: 720px;
+    }
+
+    .cards .right,
+    .cards .left {
+        width: 250px;
+        height: fit-content;
+    }
+
+
+    .cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cards .right {
+        position: initial;
+        align-self: flex-end;
+    }
+
+    .cards .left {
+        align-self: flex-start;
+        margin-bottom: -50px;
+        position: initial;
+    }
+
+    .news2 {
+        flex-direction: column;
+        height: 700px;
+    }
+
+    .news2 .pic2 {
+        width: 100%;
+    }
+
+    .cards2 {
+        left: 0;
+        bottom: 96px;
+        width: 100%;
+    }
+
+    [data-lang='Arabic'] .cards2 {
+        right: 0;
+        left: initial;
+    }
+
+    .cards2 .left {
+        left: 0;
+        width: 100%;
+
+    }
+
+    .cards2 .left::after {
+        width: 80px;
+        height: 80px;
+        top: 213px;
+        left: 29px;
+    }
+
+    [data-lang='Arabic'] .cards2 .left::after {
+        top: 118px;
     }
 
     .pic3 p {

@@ -19,12 +19,12 @@
     border-left: 1px solid var(--main-color);
 }
 
-.up.english .book {
+[data-lang='English'] .up .book {
     border-right: 1px solid var(--main-color);
     border-left: none;
 }
 
-.up.english .book .photo {
+[data-lang='English'] .ups .book .photo {
     width: 30px;
     height: 40px;
     margin-right: 10px;
@@ -98,7 +98,7 @@
     left: 0;
 }
 
-.up.english .listMenu {
+[data-lang='English'] .up .listMenu {
     right: 0;
     left: initial;
 }
@@ -150,7 +150,7 @@
     left: initial;
 }
 
-.up.english .listMenu ul li .icons {
+[data-lang='English'] .up .listMenu ul li .icons {
     right: -3px;
     left: initial;
 }
@@ -172,4 +172,23 @@
 .up .listMenu .up ul li .icons .icon,
 .up .listMenu.up ul li .icons .activeIcon {
     right: 30px;
+}
+
+@media (max-width:392px) {
+    .up .bookUp {
+        flex-direction: column;
+        justify-content: initial;
+        align-items: initial;
+    }
+
+    .up .listMenu {
+        position: absolute;
+        bottom: -62px;
+        left: 0;
+        width: 100%;
+    }
+
+    .chapterList {
+        width: 93%;
+    }
 }

@@ -5,15 +5,30 @@
 :root {
   --main-color: #8afb81;
   --secondary-color: #ffff1c;
-  --main-bg-light-color: #faffd1;
-  --main-bg-dark-color: #17160d;
+  --background: #fdffee;
+  --color: #000;
+  --lang: BinkoEng;
+  --dir: ltr;
 
 }
 
+[data-lang='Arabic'] {
+  --dir: rtl;
+  --lang: BinkoAra;
+
+}
+
+[data-theme='Dark'] {
+  --background: #17160d;
+  --color: #fff;
+}
+
 body {
-  font-family: BinkoEng;
-  background-color: var(--main-bg-light-color);
+  font-family: var(--lang);
+  background-color: var(--background);
+  color: var(--color);
   transition: .5s;
+  direction: var(--dir);
 }
 
 @font-face {
@@ -33,6 +48,7 @@ body {
 
 a {
   text-decoration: none;
+  color: var(--color);
 }
 
 ul {
