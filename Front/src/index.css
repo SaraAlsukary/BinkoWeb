@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
@@ -86,4 +88,8 @@ a .mark {
 .active .mark {
   display: block;
 
+}
+
+.ql-picker-label:hover {
+  color: var(--secondary-color);
 }

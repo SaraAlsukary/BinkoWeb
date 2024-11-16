@@ -10,7 +10,7 @@ const News = lazy(() => import('@pages/News/News'));
 const Registeration = lazy(() => import('@pages/Registeration/Registeration'));
 const Books = lazy(() => import('@pages/Books/Books'));
 const BooksInfo = lazy(() => import('@pages/BooksInfo/BooksInfo'));
-const AddBook = lazy(() => import('@pages/AddBook/AddBook'));
+const AddBook = lazy(() => import('@pages/AddBook/AddBooks'));
 const Favorite = lazy(() => import('@pages/Favorite/Favorite'));
 const Profile = lazy(() => import('@pages/Profile/Profile'));
 const Settings = lazy(() => import('@pages/Settings/Settings'));

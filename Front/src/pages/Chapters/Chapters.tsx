@@ -3,9 +3,9 @@ import style from './Chapters.module.css';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { Container } from 'react-bootstrap';
-import { Button } from '@components/feedback';
 import { useState } from 'react';
 import ChapterMenu from '@components/Chapters/ChapterMenu/ChapterMenu';
+import SecondaryButton from '@components/feedback/SecondaryButton/SecondaryButton';
 const { text, down, buttn, chapterCont } = style;
 const Chapters = () => {
     const [disNext, setDisNext] = useState(false);
@@ -64,8 +64,8 @@ const Chapters = () => {
                     <p>{chapterInfo?.content}</p>
                 </div>
                 <div className={buttn}>
-                    <Button style={disNext ? { display: 'none' } : { display: 'block' }} disabled={disNext} onClick={() => nextNavigateHandler()}>{language === 'English' ? `Next Chapter` : `الفصل التالي`}</Button>
-                    <Button style={disPrev ? { display: 'none' } : { display: 'block' }} disabled={disPrev} onClick={() => prevNavigateHandler()}>{language === 'English' ? `Previous Chapter` : `الفصل السابق`}</Button>
+                    <SecondaryButton style={disNext ? { display: 'none' } : { display: 'block' }} disabled={disNext} onClick={() => nextNavigateHandler()}>{language === 'English' ? `Next Chapter` : `الفصل التالي`}</SecondaryButton>
+                    <SecondaryButton style={disPrev ? { display: 'none' } : { display: 'block' }} disabled={disPrev} onClick={() => prevNavigateHandler()}>{language === 'English' ? `Previous Chapter` : `الفصل السابق`}</SecondaryButton>
                 </div>
             </div>
         </Container>

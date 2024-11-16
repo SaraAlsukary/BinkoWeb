@@ -16,6 +16,8 @@ import language from "./languageSlice/languageSlice";
 import theme from "./themeSlice/themeSlice";
 import chapters from "./chaptersSlice/chaptersSlice";
 import comments from "./commentsSlice/commentsSlice";
+import addChapter from "./addChapterSlice/addChapterSlice";
+import addBook from "./addBookSlice/addBookSlice";
 
 // const rootPersistConfig = {
 //     key: "root",
@@ -25,7 +27,7 @@ import comments from "./commentsSlice/commentsSlice";
 const rootPersistConfig = {
     key: "root",
     storage,
-    whitelist: ["language", "theme"],
+    whitelist: ["language", "theme", "addChapter", "addBook"],
 };
 
 // const authPersistConfig = {
@@ -52,6 +54,8 @@ const rootPersistConfig = {
 const rootReducer = combineReducers({
     language: language,
     theme: theme,
+    addChapter: addChapter,
+    addBook: addBook,
     auth,
     books,
     chapters,
